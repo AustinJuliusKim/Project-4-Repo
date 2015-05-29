@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @user.password %>
+</p>
+
+<h4>Previous Orders</h4>
+<div>
+	<% @orders.reverse.each do |order| %>
+	<ul>
+		<li>
+			<%= link_to "Order Details", order_path(order) %>
+			<%= order.id %>
+			<strong><%= order.quantity %></strong>
+			<%= order.total_price %>
+		</li>
+	</ul>
+	<% end %>
+</div>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
