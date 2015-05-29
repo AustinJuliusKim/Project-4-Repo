@@ -32,8 +32,8 @@ RSpec.describe User, type: :model do
 
 		it "is invalid if a user tries to signup with an email that already exists, regardless of capitalization" do
 			user1 = FactoryGirl.create(:user, firstname: "Roger", lastname: "Smith", email: "roger@example.com")
-			user2 = FactoryGirl.create(:user, firstname: "Roger", lastname: "Smith", email: "roger@example.com")
-			user3 = FactoryGirl.create(:user, firstname: "Roger", lastname: "Smith", email: "ROGER@example.com")
+			user2 = FactoryGirl.build_stubbed(:user, firstname: "Roger", lastname: "Smith", email: "roger@example.com")
+			user3 = FactoryGirl.build_stubbed(:user, firstname: "Roger", lastname: "Smith", email: "ROGER@example.com")
 			expect(user1).to be_valid
 			expect(user2).to be_invalid
 			expect(user3).to be_invalid
@@ -42,7 +42,7 @@ RSpec.describe User, type: :model do
 
 		it "is invalid if email isn't formatted properly" do
 			user = FactoryGirl.build_stubbed(:user, email: "asdfg")
-			expect(@user1).to be_invalid
+			expect(user).to be_invalid
 		end
 
 	end
