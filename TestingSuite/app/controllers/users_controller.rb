@@ -5,10 +5,11 @@ class UsersController < ApplicationController
 	end
 
 	def show
-	
+		@user = User.find(params[:id])
 	end
 
 	def new
+		@user = User.new
 	end
 
 	def edit
@@ -18,9 +19,9 @@ class UsersController < ApplicationController
 	def create
 		@user = User.new(user_params)
 		if @user.save 
-			render status: 201
+			redirect_to users_path
 		else	
-			render :new, status: 422
+			render :new
 		end	
 	end
 
@@ -34,7 +35,7 @@ class UsersController < ApplicationController
 
 	private 
 	def user_params
-		parmas.require(:user).permit(:firstname, :lastname, :email, :password, :companyname)
+		params.require(:user).permit(:firstname, :lastname, :email, :password, :companyname)
 	end
 
 	def set_item

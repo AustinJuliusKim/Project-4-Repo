@@ -1,3 +1,7 @@
-<div>
-	
-</div>
+<h1>This is the users index!</h1>
+
+<% @users.each do |user| %>
+	<div>
+		<%= user.full_name %>
+	</div>
+<% end %>

@@ -1,8 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do 
-	describe "User attribute validations" do
+	describe "attribute validations" do
 		it "is invalid without a first name"
+			@user = FactoryGirl.build_stubbed(:user)
+
 
 		it "is invalid without a last name"
 
