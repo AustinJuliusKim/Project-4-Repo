@@ -1,0 +1,15 @@
+ <div class="ui form segment">
+    <%= form_for :login do |f|  %>
+        <div class="field">
+            <%= f.label :email %>
+            <%= f.text_field :email %>
+        </div>
+        <div class="field">
+            <%= f.label :password  %>
+            <%= f.password_field :password %>
+        </div>
+        <div class="button">
+            <%= f.submit "Login" %>
+        </div>
+    <% end %>
+</div>

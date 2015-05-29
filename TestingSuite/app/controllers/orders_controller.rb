@@ -5,6 +5,7 @@ class OrdersController < ApplicationController
 
 	def show
 		@order = Order.find(params[:id])
+		render json: @order
 	end
 
 	def new
@@ -12,9 +13,11 @@ class OrdersController < ApplicationController
 	end
 
 	def create
-		@order = Order.new(order_params)
+		my_details = params[:custom_order].to_json
+
+		@order = Order.new({details: my_details})
 		if @order.save
-			redirect_to orders_path
+			redirect_to order_path(@order)
 		else
 			render :new
 		end
@@ -43,4 +46,5 @@ class OrdersController < ApplicationController
 	def order_params
 		params.require(:order).permit(:price, :details, :user_id)
 	end
+	
 end

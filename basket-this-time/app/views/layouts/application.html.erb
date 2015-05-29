@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BasketThisTime</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= link_to "Users", users_path %>
+<%= link_to "Orders", orders_path %>
+<%= link_to "Products", products_path %>
+<% if current_user.nil? %>
+
+<% else %>
+	<%= current_user.name %>
+<% end %>
+<div>
+	<h1 class="cart-text"><%= render 'layouts/cart_text' %></h1>
+</div>
+
+<%= yield %>
+
+</body>
+</html>
