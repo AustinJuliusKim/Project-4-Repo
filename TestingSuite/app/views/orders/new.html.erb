@@ -1,2 +1,20 @@
-
+<div>
+	<%= form_for :custom_order, url: '/orders' do |f| %>
+	<div>
+		<%= f.label "Egg Size" %>
+		<%= f.select "egg_size", options_for_select(["Small", "Medium", "Large", "Xtra Large", "Jumbo"]) %>
+	</div>
+	<div>
+		<%= f.label "Egg Color" %>
+		<%= f.select "egg_color", options_for_select(["Brown", "White"]) %>
+	</div>
+	<div>
+		<%= f.label "Quantity (In cases)" %>
+		<%= f.text_field :quantity%>
+	</div>
+	<div>
+		<%= f.submit %>
+	</div>
+	<% end %>
+</div>
 
