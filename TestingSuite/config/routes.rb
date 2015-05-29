@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  resources :users, only: [:index, :show, :new, :create, :edit, :destroy]
+  resources :users do
+  		resources :orders
+  	end
 end
