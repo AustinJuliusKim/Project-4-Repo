@@ -13,27 +13,27 @@ RSpec.describe UsersController, :type => :controller do
 		it "should have a status code of 200" do
 			expect(response).to have_http_status (200)
 		end
-		# it "should display an index of users" do
-		# 	@user1 = FactoryGirl.create(:user)
-		# 	@user2 = FactoryGirl.create(:user)
-		# 	expect(assigns(:users)).to include(@user1, @user2)
-		# end
+		it "should display an index of users" do
+			@user1 = FactoryGirl.create(:user)
+			@user2 = FactoryGirl.create(:user)
+			expect(assigns(:users)).to include(@user1, @user2)
+		end
 	end
 
 	describe "GET #show" do
-		# before :each do
-		# 	@user1 = FactoryGirl.create(:user) // comment back in to make show test pass
-		# 	get :show, id: @user1.id
+		before :each do
+			@user1 = FactoryGirl.create(:user) // comment back in to make show test pass
+			get :show, id: @user1.id
 
-		# end
+		end
 
-		# it "should render the correct page" do 
-		# 	expect(response).to render_template("show")
-		# end
+		it "should render the correct page" do 
+			expect(response).to render_template("show")
+		end
 
-		# it "should have a status code of 200" do 
-		# 	expect(response).to have_http_status (200)
-		# end
+		it "should have a status code of 200" do 
+			expect(response).to have_http_status (200)
+		end
 
 	end
 
@@ -53,14 +53,14 @@ RSpec.describe UsersController, :type => :controller do
 
 	describe "POST #create" do
 		
-		# it "should render the correct page" do 
-		# 	expect(response).to render_template("post")
-		# end
+		it "should render the correct page" do 
+			expect(response).to render_template("post")
+		end
 
-		# it "should have a status code of 201" do 
-		# 	@user1 = FactoryGirl.create(:user)p
-		# 	expect(response).to have_http_status (201)
-		# end
+		it "should have a status code of 201" do 
+			@user1 = FactoryGirl.create(:user)p
+			expect(response).to have_http_status (201)
+		end
 		it "should persist the item to database" do
 			expect{User.create}.to change(User, :count).by(1)
 		end

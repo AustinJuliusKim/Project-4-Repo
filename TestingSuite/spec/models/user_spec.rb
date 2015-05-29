@@ -1,10 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do 
+
 	describe "User attribute validations" do
-		# before do 
-		# 	@user1 = FactoryGirl.build_stubbed(:user)
-		# end
+		before do 
+			@user1 = FactoryGirl.build_stubbed(:user)
+		end
 		it "is invalid without a first name" do
 			user = FactoryGirl.build_stubbed(:user, firstname: nil)
 			expect(user).to be_invalid

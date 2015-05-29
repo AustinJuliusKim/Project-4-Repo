@@ -1,1 +1,40 @@
-<div></div>
+<%= form_for(@user) do |f| %>
+
+  <div class="field">
+    <%= f.label :firstname, "First Name" %><br />
+    <%= f.text_field :firstname, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :lastname, "Last Name" %><br />
+    <%= f.text_field :lastname %>
+  </div>
+
+  <div class="field">
+    <%= f.label :companyname,"Name of Company" %><br />
+    <%= f.text_field :companyname %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation, "Confirmation" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div>
+  	<%= f.submit "Sign up" %>
+  </div>
+
+<% end %>
