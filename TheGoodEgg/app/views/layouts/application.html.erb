@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TheGoodEgg</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="container">
+
+	<div>
+		<% if user_signed_in? %> 
+			<%= current_user.email %> <%= link_to 'Logout', destroy_user_session_path, method: :delete %> 
+		<% else %> 
+			<%= link_to 'Login', new_user_session_path %>
+		<% end %>
+	</div>
+
+	<div class="devise">
+		<p class="notice"><%= notice %></p>
+		<p class="alert"><%= alert %></p>
+	</div>
+	
+    <div class="row">
+      <div class="col-xs-6">
+        <h1><%= link_to "My Store", root_path %></h1>
+      </div>
+      <div class="col-xs-6 text-right">
+        <h1 class="cart-text"><%= render 'layouts/cart_text' %></h1>
+      </div>
+    </div>
+    <hr>
+    <%= yield %>
+  </div>
+
+</body>
+</html>
