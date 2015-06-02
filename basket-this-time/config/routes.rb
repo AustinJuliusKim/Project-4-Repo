@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'page/home'
+
   root to: "products#index"
   get 'order_items/create'
 
