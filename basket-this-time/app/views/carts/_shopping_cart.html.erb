@@ -1,3 +1,5 @@
+<center>
+<div class="container">
 <% if !@order_item.nil? && @order_item.errors.any? %>
 	<div class="alert alert-danger">
 		<ul>
@@ -17,5 +19,7 @@
 		 <% end %>
 		 <br>
 		 <%= link_to "Check Out", order_path(@order), class: "btn btn-info" %> 
-		 
 	 <% end %>
+</div>	
+</center> 
+
