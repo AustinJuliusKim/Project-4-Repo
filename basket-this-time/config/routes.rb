@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'page/home'
 
-  root to: "products#index"
+  root to: "pages#home" 
   get 'order_items/create'
 
   get 'order_items/update'

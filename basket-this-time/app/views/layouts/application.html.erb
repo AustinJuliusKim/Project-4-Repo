@@ -13,10 +13,11 @@
 <% else %>
 	<%= current_user.name %>
 <% end %>
-<div>
-	<button class="btn btn-primary">yeah</button>
-	<h1 class="cart-text"><%= render 'layouts/cart_text' %></h1>
-</div>
+
+<!-- <div class="well"> -->
+<h1 class="cart-text"><%= render 'layouts/cart_text' %></h1>
+<!-- </div> -->
+
 
 <%= yield %>
 

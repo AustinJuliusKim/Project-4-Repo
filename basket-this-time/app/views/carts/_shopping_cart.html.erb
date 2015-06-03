@@ -1,5 +1,4 @@
-<center>
-<div class="container">
+<!-- <div class="container"> -->
 <% if !@order_item.nil? && @order_item.errors.any? %>
 	<div class="alert alert-danger">
 		<ul>
@@ -18,5 +17,4 @@
 		 	<%= render 'carts/cart_row', product: order_item.product, order_item: order_item, show_total: true %>
 		 <% end %>
 	 <% end %>
-</div>	
-</center> 
+<!-- </div>	 -->
