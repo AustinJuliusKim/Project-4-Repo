@@ -7,14 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
 <%= render 'layouts/navbar' %>
+
 <% if current_user.nil? %>
 
 <% else %>
 	<%= current_user.name %>
 <% end %>
 <div>
-	<button class="btn btn-primary">yeah</button>
 	<h1 class="cart-text"><%= render 'layouts/cart_text' %></h1>
 </div>
 

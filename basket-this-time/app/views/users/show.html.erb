@@ -24,6 +24,11 @@
 			<%= order.id %>
 			<strong><%= order.quantity %></strong>
 			<%= order.total_price %>
+			<ul>
+				<% order.order_items.each do |order_item|%>
+					<li><%= order_item.product(:product_id).name %></li>
+				<% end %>
+			</ul>
 		</li>
 	</ul>
 	<% end %>

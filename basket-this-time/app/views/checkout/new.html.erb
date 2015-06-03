@@ -1,0 +1,24 @@
+<ul>
+<% @order.order_items.each do |order_item| %>
+	<li>	
+		<%= order_item.product(:product_id).name %>
+
+	<%= form_for order_item,  remote: true do |f| %>
+		<div class="row vertical-center-row">
+			<div class="col-lg-12">
+				<%= f.number_field :quantity, value: order_item.quantity.to_i, class: "form-control", min: 1 %>
+			
+			</div>
+		</div>
+		<div class="col-lg-8 text-left">
+			<div class="btn-group">
+				<%= f.submit "Update Quantity", class: "btn btn-primary" %>
+				<%= link_to "Delete", order_item, {data: { confirm: "Are you sure you wish to delete the product '#{order_item.product.name}' from your cart?"}, method: :delete, remote: true, class: "btn btn-danger"} %>
+			</div>
+		</div>
+		<% end %>
+	</li>
+
+<% end %>
+	<%= link_to "Confirm Order", checkout_path %>
+</ul>

@@ -23,6 +23,7 @@ group :development, :test do
   gem 'spring'
   gem 'quiet_assets'
   gem 'factory_girl_rails'
+  gem 'better_errors'
   gem 'rspec-rails'
 end
 
