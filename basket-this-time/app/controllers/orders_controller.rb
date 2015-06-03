@@ -10,7 +10,18 @@ class OrdersController < ApplicationController
 
   def show
     @order = current_order
-    @orderitems = OrderItem.all
+    @order_items = OrderItem.all
+  end
+
+  def update_status
+    @order = current_order
+    @order_items = OrderItem.all
+    @order.order_status_id = 2
+    if @order.save
+      redirect_to order_path(@order)
+    else
+      redirect_to cart_path
+    end
   end
 
   # GET /orders/new
@@ -26,8 +37,9 @@ class OrdersController < ApplicationController
   end
 
   def update
+    @order = current_order
+    @order.update_attribute(order_status_id)
   end
-
 
   def destroy
   end

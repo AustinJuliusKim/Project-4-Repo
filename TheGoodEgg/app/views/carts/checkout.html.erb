@@ -1,0 +1,14 @@
+<div class="shopping-cart">
+<h1>Confirm Order Details</h1>
+	<%= render 'shopping_cart' %>
+	<div class="text-right">
+	<h3><strong>Subtotal = <%= number_to_currency current_order.subtotal %></strong></h3>
+	</div>
+	<hr>
+	<div class="text-right">
+ 			<%= link_to "Place Order",  cart_order_placed_path %>
+ 	</div>
+ 	<div>
+ 	<hr>
+ 	</div>
+</div>

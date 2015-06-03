@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get 'carts/show'
 
+  "orders#update_status"
+
   resources :products, only: [:index]
   resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
@@ -21,6 +23,7 @@ Rails.application.routes.draw do
 
   resources :orders, only: [:show]
   resources :users, except: [:new]
+  resources :checkout, only: [:new, :create, :show]
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
