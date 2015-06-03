@@ -1,4 +1,4 @@
 class Product < ActiveRecord::Base
   belongs_to :order
-  has_many :order_items
+  has_many :order_items, dependent: :destroy
 end

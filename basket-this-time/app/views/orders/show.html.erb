@@ -2,7 +2,7 @@
 
 <p>
   <strong>User:</strong>
-  <%= @order.user %>
+  <%=link_to "#{@order.user.name}", user_path(@order.user) %>
 </p>
 
 <p>
@@ -16,13 +16,25 @@
 </p>
 
 <div>
-	<% @products.each do |product| %>
+
+<% if @order.order_status_id == 1 %>
+<h1>In Progress Orders</h1>
+	<% @order_items.each do |oi| %>
 		<ul>
-			<li><strong><%= product.name %></strong> | <%= product.description %>
+			<li><strong><%= oi.product.name %></strong> <%= oi.product.description %>
 			</li>
-		</ul>
+		</ul>	
 	<% end %>
+<% end %>
+<% if @order.order_status_id == 2 %>
+	<% @order_items.each do |oi| %>
+		<ul>
+			<li><strong><%= oi.product.name %></strong> <%= oi.product.description %>
+			</li>
+		</ul>	
+	<% end %>
+<% end %>
 </div>
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+
+

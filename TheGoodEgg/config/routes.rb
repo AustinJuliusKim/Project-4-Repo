@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   resources :users
   resources :products, only: [:index]
   resource :cart, only: [:show]
-  resources :order_items, only: [:create, :udpate, :destroy]
+  get 'cart/checkout' => 'carts#checkout'
+  get 'cart/order_placed' => 'carts#order_placed'
+  resources :order_items, only: [:create, :update, :destroy]
 
+  resources :order, only: [:show]
   
 end
