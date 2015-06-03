@@ -7,37 +7,30 @@
 		</p>
 
 		<p>
-		  <strong>Password:</strong>
-		  <%= @user.password %>
-		</p>
-
-		<p>
 		  <strong>Name:</strong>
 		  <%= @user.name %>
 		</p>
 	</div>  <!-- end of col -->
-
-	<div class="col-md-4">
-	<ul>
-	<% @orders.reverse.each do |order| %>
-		<li>
-			<%= link_to "Order Details", order_path(order) %>
-			<strong><%= order.order_status(:order_status_id).name %></strong>
-			<%= order.inspect %>
-			<ul>
-				<% order.order_items.each do |order_item| %>
-					<li><%= order_item.product(:product_id).name %> -
-					<%= order_item.product(:produt_id).price %>
-					</li>
-				<% end %>
-			</ul>
-		</li>
-	<% end %>
-	</ul>
-	</div>
-
-
 </div>  <!-- end of row -->
+
+<div class="table-responsive">
+<table class="table table-hover">
+	<theader>
+		<th>#ID</th>
+		<th>Status</th>
+		<th>More</th>
+		<th>Subtotal</th>
+	</theader>
+	<% @orders.reverse.each do |order| %>
+	<tbody>
+		<td><%= order.id %></td>
+		<td><%= order.order_status(:order_status_id).name %></td>
+		<td><%= link_to "Order Details", order_path(order) %></td>
+		<td><%= order.subtotal %></td>
+	</tbody>
+	<% end %>
+</table>
+</div>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
