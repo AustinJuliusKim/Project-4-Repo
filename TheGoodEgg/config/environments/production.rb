@@ -2,9 +2,17 @@ Rails.application.configure do
 
 
   # Should be set to actual host of application
-  # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-
-
+  config.action_mailer.default_url_options = { host: 'example.com' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.smtp_settings = {
+    :address => "smtp.mandrillapp.com",
+    :port => 25,
+    :user_name => Figaro.env.MANDRILL_USERNAME,
+    :password => Figaro.env.MANDRILL_APIKEY
+  }
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
