@@ -22,12 +22,14 @@
  
 #container {
     width: 600px;
-    margin: 50px auto;
+    margin: 0px auto;
+    margin-left: 20%;
 }
  
 /*Text Sections*/
 .section {
     margin: 50px 0;
+
 }
  
 .section h1 {
@@ -82,8 +84,9 @@
   visibility: hidden;
   font-size: 0;
 }
-
-
+a {
+	color: #FF0000;
+}
 
 
 
