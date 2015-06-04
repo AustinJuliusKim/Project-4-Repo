@@ -16,3 +16,15 @@
  @import 'bootstrap';
  @import 'bootstrap-sprockets';
  @import 'bootstrap/glyphicons';
+
+#product-index{
+	margin: 0 auto;
+	background: -webkit-linear-gradient(top, #FFFFFF 0%, #FFEABD 61%,  #FFFFFF 100%); /* Chrome10+,Safari5.1+ */
+	background-color: #C47835;
+	display:block;
+ 	width: 720px;
+ 	height: 900px;
+ 	border: 1px black solid;
+	-webkit-border-radius: 63px 63px 63px 63px / 108px 108px 72px 72px;
+ border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+}
