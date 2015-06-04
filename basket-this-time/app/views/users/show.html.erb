@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
-
+<div class="well">
+	<div class="row">
+		<div class="col-xs-6 col-xs-offset-3">
 <p>
   <strong>Name:</strong>
   <%= @user.name %>
@@ -16,6 +18,22 @@
 </p>
 
 <h4>Previous Orders</h4>
+<<<<<<< HEAD
+			<div>
+				<% @orders.reverse.each do |order| %>
+				<ul>
+					<li>
+						<%= link_to "Order Details", order_path(order) %>
+						<%= order.id %>
+						<strong><%= order.quantity %></strong>
+						<%= order.total_price %>
+					</li>
+				</ul>
+				<% end %>
+			</div>
+		</div>
+	</div>	
+=======
 <div>
 	<% @orders.reverse.each do |order| %>
 	<ul>
@@ -32,6 +50,7 @@
 		</li>
 	</ul>
 	<% end %>
+>>>>>>> 20a437e6b9206876623260f79910b78c32354eb2
 </div>
 
 

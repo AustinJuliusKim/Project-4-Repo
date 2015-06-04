@@ -8,16 +8,19 @@
 </head>
 <body>
 
-<%= render 'layouts/navbar' %>
+<%#= render 'layouts/navbar' %>
 
 <% if current_user.nil? %>
 
 <% else %>
 	<%= current_user.name %>
 <% end %>
-<div>
-	<h1 class="cart-text"><%= render 'layouts/cart_text' %></h1>
-</div>
+
+<!-- <div class="well"> -->
+<!-- <h1 class="cart-text"><%= render 'layouts/cart_text' %></h1>
+ --><!-- </div> -->
+
+
 
 <%= yield %>
 

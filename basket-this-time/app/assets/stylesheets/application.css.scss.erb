@@ -1,0 +1,76 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Libre+Baskerville);
+
+#home-container{
+	
+	background-size: 50%;
+	background: width;
+}
+
+.imagebox{
+	background: url(<%= image_path 'pictures/family.jpg' %>) no-repeat center;
+	background-size: 100%;
+	width: 100%;
+	height:275px;
+	background-color: black;
+
+}
+.glam{
+	background: url(<%= image_path 'pictures/glam.jpg' %>) no-repeat center;
+	background-size: 100%;
+	width: 100%;
+	height:200px;
+	background-color: black;
+
+}
+
+.container {
+	width: 350px;
+	margin: 100px auto;
+	padding: 20px;
+	background: black;
+	background-color: rgba(0,0,0,0.6);
+	text-align: center;
+	border-radius: 40px;
+	
+}
+
+
+h1 {
+	font-family: 'Helvetica Neue';
+	font-weight: 100;
+	font-size: 60px;
+}
+
+p {
+	font-family: 'Libre Baskerville', serif;
+	font-weight: 200;
+	font-size: 16px;
+}
+
+
+
+
+
+
+
+
+
+
