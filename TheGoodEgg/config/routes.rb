@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   devise_for :users
  
-  resources :users, only: [:show]
+  resources :users, only: [:show, :edit, :update]
   resources :products, only: [:index]
   resource :cart, only: [:show]
   get 'cart/checkout' => 'carts#checkout'

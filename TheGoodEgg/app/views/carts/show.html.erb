@@ -1,10 +1,16 @@
 <div class="shopping-cart">
 <h1>Shopping Cart</h1>
 	<%= render "shopping_cart" %>
+	<div class="row">
+	<div class="col-xs-6 col-xs-offset-4">
 	<div class="text-right">
 		<% if @order_items.empty? %>
 		<% else %>
 		<h3><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> <%= link_to "Checkout", cart_checkout_path %></h3>
 		<% end %>	
+		<br>
+		<br>
+	</div>
+	</div>
 	</div>
 </div>
