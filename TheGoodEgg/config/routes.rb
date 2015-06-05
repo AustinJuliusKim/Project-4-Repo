@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
-  root 'products#index'
+  root 'products#home'
+  get 'products/home'
 
   devise_for :users
  
-  resources :users
+  resources :users, except: [:index]
   resources :products, only: [:index]
   resource :cart, only: [:show]
   get 'cart/checkout' => 'carts#checkout'

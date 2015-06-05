@@ -1,36 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="shortcut icon" src="assets/images/pictures/chicken1.png">
   <title>TheGoodEgg</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="container">
 
-	<div>
-		<% if user_signed_in? %> 
-			<span class="glyphicon glyphicon-user" aria-hidden="true"></span> <%= link_to "#{current_user.email}", user_path(current_user), class: "btn btn-link" %> | <%= link_to 'Logout', destroy_user_session_path, method: :delete %> 
-		<% else %> 
-			<%= link_to 'Login', new_user_session_path %>
-		<% end %>
-	</div>
-
-	<div class="devise">
+<%= render 'layouts/navbar_home' %>
+<div class="devise">
             <%= flash[:error] %>
-		<p class="notice"><%= notice %></p>
-		<p class="alert"><%= alert %></p>
-	</div>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+</div>
+<div class="container">
 	
-    <div class="row">
-      <div class="col-xs-6">
-        <h1><%= link_to "My Store", root_path %></h1>
-      </div>
-      <div class="col-xs-6 text-right">
-        <h1 class="cart-text"><%= render 'layouts/cart_text' %></h1>
+	
+    <div class="row" id="header">
+      <div class="col-xs-6 col-xs-offset-3" id="title">
+      <%= image_tag "pictures/chicken1.png", class: "chicken" %>
+    <h1><%= link_to "The Good Egg Co", root_path %></h1>
       </div>
     </div>
+
     <hr>
     <%= yield %>
   </div>

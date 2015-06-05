@@ -4,11 +4,11 @@
 
 
 <%= link_to "#{current_order.order_items.size} Items in #{current_user.name}'s Cart ( #{number_to_currency current_order.subtotal} )", cart_path, class: "btn btn-link" %>
-<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+
 
 <% else %>
 
 <%= link_to "#{current_order.order_items.size} Items in Cart ( #{number_to_currency current_order.subtotal} )", cart_path, class: "btn btn-link" %>
-<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+
 
 <% end %>
