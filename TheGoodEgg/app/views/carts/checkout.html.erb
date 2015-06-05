@@ -1,6 +1,8 @@
 <div class="shopping-cart">
 <h1>Confirm Order Details</h1>
 	<%= render 'shopping_cart' %>
+<div class="row">
+<div class="col-xs-6 col-xs-offset-4">
 	<div class="text-right">
 		<h3><strong>Subtotal = <%= number_to_currency current_order.subtotal %></strong></h3>
 	</div>
@@ -22,4 +24,6 @@
  	<div>
  	<hr>
  	</div>
+ 	</div>
+ </div>
 </div>
