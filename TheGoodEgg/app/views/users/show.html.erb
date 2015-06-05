@@ -23,10 +23,10 @@
 	</theader>
 	<% @orders.reverse.each do |order| %>
 	<tbody>
-		<td><%= order.id %></td>
-		<td><%= order.order_status(:order_status_id).name %></td>
-		<td><%= link_to "Order Details", order_path(order) %></td>
-		<td><%= number_to_currency order.subtotal %></td>
+		<td style="text-align: left"><%= order.id %></td>
+		<td style="text-align: left"><%= order.order_status(:order_status_id).name %></td>
+		<td style="text-align: left"><%= link_to "Order Details", order_path(order) %></td>
+		<td style="text-align: left"><%= number_to_currency order.subtotal %></td>
 	</tbody>
 	<% end %>
 </table>

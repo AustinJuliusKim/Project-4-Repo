@@ -9,15 +9,15 @@ class CartsController < ApplicationController
  
   
   def show
-  	@order = current_order
-  	@order_items = current_order.order_items
+    @order = current_order
+    @order_items = current_order.order_items
   end
 
   # Edit and confirm order items and total  
   def checkout
-  	@user = current_user
-  	@order_items = current_order.order_items
-  	@order = current_order  
+    @user = current_user
+    @order_items = current_order.order_items
+    @order = current_order  
   end
 
   def order_placed
@@ -33,11 +33,12 @@ class CartsController < ApplicationController
       if @order.save
         OrderMailer.order_email(@user, @order).deliver_now
         session[:order_id] = nil
-        redirect_to user_path(@user)
+        redirect_to @user,  notice: "Order was successfully placed."
       else
-        render :checkout
+        render :checkout, notice: "Order was not completed."
       end
     end
   end
   
 end
+
