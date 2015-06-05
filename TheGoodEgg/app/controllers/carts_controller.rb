@@ -18,10 +18,6 @@ class CartsController < ApplicationController
   	@user = current_user
   	@order_items = current_order.order_items
   	@order = current_order  
-        if @order.total = 0
-          flash[:error] = "There are no items in your shopping cart"
-          redirect_to products_path
-        end
   end
 
   def order_placed
@@ -30,7 +26,7 @@ class CartsController < ApplicationController
     @order = current_order
     @order.order_status_id = 2
     @order[:user_id] = @user.id
-    if @order.total = 0
+    if @order.total.nil?
       flash[:error] = "There are no items in your shopping cart"
       redirect_to products_path
     else
@@ -43,8 +39,5 @@ class CartsController < ApplicationController
       end
     end
   end
-
-
-
   
 end
