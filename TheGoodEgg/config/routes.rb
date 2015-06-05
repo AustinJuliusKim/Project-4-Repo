@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :products, only: [:index]
   resource :cart, only: [:show]
   get 'cart/checkout' => 'carts#checkout'
-  get 'cart/order_placed' => 'carts#order_placed'
+  get 'cart/order_placed' => 'carts#order_placed', as: :cart_order_placed
   resources :order_items, only: [:create, :update, :destroy]
 
   resources :order, only: [:show]
