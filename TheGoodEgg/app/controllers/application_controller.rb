@@ -8,7 +8,6 @@ class ApplicationController < ActionController::Base
   def current_order
   	if !session[:order_id].nil?
   		Order.find(session[:order_id]) 
-      #|| Order.where(id: ).first_or_initialize
   	else
   		Order.new
   	end

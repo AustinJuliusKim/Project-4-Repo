@@ -26,7 +26,7 @@ $(function() {
           scrollTop: target.offset().top
         }, "slow");
         return false;
-      }
-    }
+      };
+    };
   });
 });

@@ -74,4 +74,10 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:email, :password, :name)
     end
+
+    def current_user
+      @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    end
+
+
 end

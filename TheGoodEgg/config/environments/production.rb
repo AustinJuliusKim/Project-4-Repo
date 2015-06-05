@@ -9,7 +9,7 @@ Rails.application.configure do
   config.action_mailer.default :charset => "utf-8"
   config.action_mailer.smtp_settings = {
     :address => "smtp.mandrillapp.com",
-    :port => 25,
+    :port => 587,
     :user_name => Figaro.env.MANDRILL_USERNAME,
     :password => Figaro.env.MANDRILL_APIKEY
   }
