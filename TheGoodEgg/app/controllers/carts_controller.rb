@@ -6,6 +6,8 @@ class CartsController < ApplicationController
     end
   end
 
+ 
+  
   def show
   	@order = current_order
   	@order_items = current_order.order_items

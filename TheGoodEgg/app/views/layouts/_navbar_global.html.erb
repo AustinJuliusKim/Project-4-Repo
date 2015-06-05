@@ -1,0 +1,34 @@
+<!-- Nav bar -->
+<div class="navbar-wrapper" id="bar" id="top">
+  <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href="#Contact">Contact</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Info <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#About-us">About Us</a></li>
+              <li><a href="#Product">Product</a></li>
+            </ul>
+          </li>
+          <li>
+              <% if user_signed_in? %> 
+                <%= link_to "#{current_user.email}", user_path(current_user), class: "btn btn-link" %> </li>
+                <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %> </li>
+              <% else %> 
+                <%= link_to 'Login', new_user_session_path %>
+              <% end %>
+          </li>
+          <li>
+          <a href="/cart"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+          </li>
+          <li class="navbar pull-right">
+            <% if user_signed_in? %>
+              <%= link_to "#{current_order.order_items.size} Items in #{current_user.name}'s Cart ( #{number_to_currency current_order.subtotal} )", cart_path, class: "btn btn-link" %>
+              <% else %>
+              <%= link_to "#{current_order.order_items.size} Items in Cart ( #{number_to_currency current_order.subtotal} )", cart_path, class: "btn btn-link" %>
+            <% end %>
+            </li>
+        </ul>
+</div>
+</div>
