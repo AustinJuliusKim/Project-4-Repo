@@ -16,3 +16,13 @@ TheGoodEggCo App features a landing page that serves information about the compa
 with a functioning shopping cart.
 
 The resource for building a [shopping cart](https://richonrails.com/articles/building-a-shopping-cart-in-ruby-on-rails) can be found here.
+
+### Project deliverables
+
+ Build a web app for the Good Egg Company.
+ 
+ Create a shopping cart
+ 
+ sign in and out accecability 
+ 
+ basic style for front-end development.
